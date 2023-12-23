@@ -31,7 +31,7 @@ import numpy as np
 import gym
 import wandb
 from stable_baselines3.common.env_util import make_vec_env
-from dropo_dev import Dropo
+from rfdropo import Dropo
 import random_envs
 
 from RandomVecEnv import RandomSubprocVecEnv
@@ -52,7 +52,7 @@ def main():
     print(pformat_dict(args, indent=0))
 
     wandb.init(config=to_dict(args),
-               project="rf-dropo-dev",
+               project="rfdropo-dev",
                name=run_name,
                group=args.group,
                save_code=True,

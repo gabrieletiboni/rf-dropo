@@ -11,7 +11,7 @@ import numpy as np
 import gym
 
 from utils import *
-from dropo_dev import Dropo
+from rfdropo import Dropo
 
 from sofagym import *
 

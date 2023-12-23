@@ -23,7 +23,7 @@ import numpy as np
 import gym
 
 from utils import *
-from dropo_dev import Dropo
+from rfdropo import Dropo
 import random_envs
 
 def main():
