@@ -170,9 +170,9 @@ class Dropo(object):
 
 	def pretty_print_bounds(self, phi):
 		if self.is_vectorized(self.sim_env):
-			index_to_name = self.sim_env.get_attr('dynamics_indexes')[0]
+			index_to_name = self.sim_env.get_attr('dyn_ind_to_name')[0]
 		else:
-			index_to_name = self.sim_env.dynamics_indexes
+			index_to_name = self.sim_env.dyn_ind_to_name
 
 		return '\n'.join([str(index_to_name[i])+':\t'+str(round(phi[i*2],5))+', '+str(round(phi[i*2+1],5)) for i in range(len(phi)//2)])
 
@@ -1112,9 +1112,9 @@ class Dropo(object):
 	def _plot_phi_on_wandb(self, wandb, phi):
 		"""Plots distribution phi on wandb"""
 		if self.is_vectorized(self.sim_env):
-			index_to_name = self.sim_env.get_attr('dynamics_indexes')[0]
+			index_to_name = self.sim_env.get_attr('dyn_ind_to_name')[0]
 		else:
-			index_to_name = self.sim_env.dynamics_indexes
+			index_to_name = self.sim_env.dyn_ind_to_name
 
 		phi = self._denormalize_bounds(phi)
 		for i, (mean, stdev) in enumerate(zip(self.get_means(phi), self.get_stdevs(phi))):

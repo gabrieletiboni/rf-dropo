@@ -85,9 +85,9 @@ def get_stdevs(phi):
 def pretty_print_bounds(sim_env, phi):
 		sim_reset = sim_env.reset()
 		if isinstance(sim_env.reset(), np.ndarray) and sim_reset.ndim == 2:
-			index_to_name = sim_env.get_attr('dynamics_indexes')[0]
+			index_to_name = sim_env.get_attr('dyn_ind_to_name')[0]
 		else:
-			index_to_name = sim_env.dynamics_indexes
+			index_to_name = sim_env.dyn_ind_to_name
 
 		return '\n'.join([str(index_to_name[i])+':\t'+str(round(phi[i*2],5))+', '+str(round(phi[i*2+1],5)) for i in range(len(phi)//2)])
 
